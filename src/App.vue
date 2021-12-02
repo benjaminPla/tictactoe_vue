@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class='app'>
+    <h1>Tic-Tac-Toe</h1>
+    <turn />
+    <board />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Turn from './components/Turn.vue';
+import Board from './components/Board.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-  },
+  components: { Turn, Board },
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped lang="scss">
+.app {
+  font-family: Avenir, sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px 40% 0 40%;
 }
 </style>
