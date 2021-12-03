@@ -4,6 +4,7 @@
     <turn />
     <board />
     <reset-button />
+    <footer-bar />
   </div>
 </template>
 
@@ -11,10 +12,12 @@
 import Turn from './components/Turn.vue';
 import Board from './components/Board.vue';
 import ResetButton from './components/ResetButton.vue';
+import FooterBar from './components/FooterBar.vue';
 
 export default {
   name: 'App',
-  components: { Turn, Board, ResetButton },
+  // eslint-disable-next-line
+  components: { Turn, Board, ResetButton, FooterBar },
 };
 </script>
 

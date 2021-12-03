@@ -1,4 +1,4 @@
-<template>
+§<template>
   <button @click.prevent='play' :class='mark === "X" ? "X" : "O"'>
     {{ mark }}
   </button>
