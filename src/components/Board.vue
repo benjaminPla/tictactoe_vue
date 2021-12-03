@@ -1,14 +1,6 @@
 <template>
   <div>
-    <game-button />
-    <game-button />
-    <game-button />
-    <game-button />
-    <game-button />
-    <game-button />
-    <game-button />
-    <game-button />
-    <game-button />
+    <game-button v-for='(button, index) in buttons' :key='index' :value='index'/>
   </div>
 </template>
 
@@ -26,12 +18,14 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@import '../assets/variables';
+
 div {
   border-radius: 5px;
-  padding: 5px;
-  background-color: #2c3e50;
+  padding: 8px;
+  background-color: $main;
   display: grid;
-  gap: 5px;
+  gap: 8px;
   grid-template-columns: repeat(3, 1fr);
 }
 </style>

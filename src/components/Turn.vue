@@ -1,5 +1,11 @@
 <template>
-  <span>I'ts {{ currentPlayer }}'s turn!</span>
+  <p v-if='!winner'>I'ts
+    <span
+    :class='currentPlayer === "X" ? "X" : "O"'>
+      {{ currentPlayer }}
+    </span>'s turn!
+  </p>
+  <p v-else :class='winner[0] === "X" ? "X" : "O"'>{{ winner }}</p>
 </template>
 
 <script>
@@ -11,7 +17,25 @@ export default {
   setup() {
     const store = useStore();
     const currentPlayer = computed(() => store.state.currentPlayer);
-    return { currentPlayer };
+    const winner = computed(() => store.state.winner);
+    return { currentPlayer, winner };
   },
 };
 </script>
+
+<style scoped lang='scss'>
+@import '../assets/variables';
+
+p {
+  margin-bottom: 20px;
+  span {
+    font-weight: 700;
+  }
+}
+.X {
+  color: $blue;
+}
+.O {
+  color: $red;
+}
+</style>
