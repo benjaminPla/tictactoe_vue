@@ -1,5 +1,5 @@
 <template>
-  <p v-if='!winner'>I'ts
+  <p v-if='!winner'>It is
     <span
     :class='currentPlayer === "X" ? "X" : "O"'>
       {{ currentPlayer }}

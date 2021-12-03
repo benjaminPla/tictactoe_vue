@@ -1,5 +1,5 @@
 <template>
-  <div class='app'>
+  <div class='app' :class='winner && "shake"'>
     <h1>Tic-Tac-Toe</h1>
     <turn />
     <board />
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 import Turn from './components/Turn.vue';
 import Board from './components/Board.vue';
 import ResetButton from './components/ResetButton.vue';
@@ -18,6 +20,11 @@ export default {
   name: 'App',
   // eslint-disable-next-line
   components: { Turn, Board, ResetButton, FooterBar },
+  setup() {
+    const store = useStore();
+    const winner = computed(() => store.state.winner);
+    return { winner };
+  },
 };
 </script>
 
